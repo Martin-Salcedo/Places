@@ -1,5 +1,5 @@
 //
-//  RecipeDetailViewCell.swift
+//  PlaceDetailViewCell.swift
 //  MisRecetas
 //
 //  Created by Juan Gabriel Gomila Salas on 8/7/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeDetailViewCell: UITableViewCell {
+class PlaceDetailViewCell: UITableViewCell {
     
     @IBOutlet var keyLabel: UILabel!
     

@@ -10,20 +10,20 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet var recipeImageView: UIImageView!
+    @IBOutlet var placeImageView: UIImageView!
     
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var ratingButton: UIButton!
     
-    var recipe : Recipe!
+    var place : Place!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = recipe.name
+        self.title = place.name
         
-        self.recipeImageView.image = self.recipe.image
+        self.placeImageView.image = self.place.image
         
         self.tableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.25)
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        let image = UIImage(named: self.recipe.rating)
+        let image = UIImage(named: self.place.rating)
         self.ratingButton.setImage(image, for: .normal)
 
         
@@ -55,14 +55,22 @@ class DetailViewController: UIViewController {
         if let reivewVC = segue.source as? ReviewViewController {
         
             if let rating = reivewVC.ratingSelected {
-                self.recipe.rating = rating
-                let image = UIImage(named: self.recipe.rating)
+                self.place.rating = rating
+                let image = UIImage(named: self.place.rating)
                 self.ratingButton.setImage(image, for: .normal)
             }
         
         }
         
     }
+//  configuracion del segue que se identifica
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showMap" {
+      let destination = segue.destination as! MapViewController
+      destination.place = self.place
+      
+    }
+  }
     
 }
 
@@ -70,93 +78,61 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return 2
-        case 1:
-            return self.recipe.ingredients.count
-        case 2:
-            return self.recipe.steps.count
-        default:
-            return 0
-        }
+        return 5
     
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailRecipeCell", for: indexPath) as! RecipeDetailViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceDetailViewCell", for: indexPath) as! PlaceDetailViewCell
         
         cell.backgroundColor = UIColor.clear
-        
-        switch indexPath.section {
-        case 0:
+      
             switch indexPath.row {
             case 0:
                 cell.keyLabel.text = "Nombre:"
-                cell.valueLabel.text = self.recipe.name
+                cell.valueLabel.text = self.place.name
             case 1:
-                cell.keyLabel.text = "Tiempo:"
-                cell.valueLabel.text = "\(self.recipe.time!) min"
-            /*case 2:
-                cell.keyLabel.text = "Favorita: "
-                if self.recipe.isFavourite {
-                    cell.valueLabel.text = "Si"
-                } else {
-                    cell.valueLabel.text = "No"
-                }*/
+                cell.keyLabel.text = "Tipo:"
+                cell.valueLabel.text = self.place.type
+            case 2:
+                cell.keyLabel.text = "Localizacion: "
+                cell.valueLabel.text = self.place.location
+            case 3:
+              cell.keyLabel.text = "Phone: "
+              cell.valueLabel.text = self.place.phone
+            case 4:
+              cell.keyLabel.text = "Page Web: "
+              cell.valueLabel.text = self.place.pageWeb
             default:
                 break
             }
-            
-        case 1:
-            if indexPath.row == 0 {
-                cell.keyLabel.text = "Ingredientes:"
-            } else {
-                cell.keyLabel.text = ""
-            }
-            cell.valueLabel.text = self.recipe.ingredients[indexPath.row]
-        case 2:
-            if indexPath.row == 0 {
-                cell.keyLabel.text = "Pasos:"
-            } else {
-                cell.keyLabel.text = ""
-            }
-            cell.valueLabel.text = self.recipe.steps[indexPath.row]
-        default:
-            break
-        }
-        
+      
         
         return cell
         
     }
     
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var title = ""
-        
-        switch section {
-        case 1:
-            title = "Ingredientes"
-        case 2:
-            title = "Pasos"
-        default:
-            break
-        }
-        
-        return title
-    }
     
 }
 
 
 
 extension DetailViewController : UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 2:
+      print("hemos selesionado el 2")
+      self.performSegue(withIdentifier: "showMap", sender: nil)
+    default:
+      break
+    }
+  }
     
 }

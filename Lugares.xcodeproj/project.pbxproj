@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86517FE61FB0D8DC00C1D36F /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86517FE51FB0D8DC00C1D36F /* AddPlaceViewController.swift */; };
 		866174A81FACD5C800318A0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174A71FACD5C800318A0D /* AppDelegate.swift */; };
 		866174AA1FACD5C800318A0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174A91FACD5C800318A0D /* ViewController.swift */; };
 		866174AD1FACD5C800318A0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866174AB1FACD5C800318A0D /* Main.storyboard */; };
 		866174AF1FACD5C800318A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866174AE1FACD5C800318A0D /* Assets.xcassets */; };
 		866174B21FACD5C800318A0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866174B01FACD5C800318A0D /* LaunchScreen.storyboard */; };
+		866174BC1FACD98A00318A0D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174BB1FACD98A00318A0D /* PlaceCell.swift */; };
+		866174C01FACDA6500318A0D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174BD1FACDA6500318A0D /* DetailViewController.swift */; };
+		866174C11FACDA6500318A0D /* PlaceDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174BE1FACDA6500318A0D /* PlaceDetailViewCell.swift */; };
+		866174C21FACDA6500318A0D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174BF1FACDA6500318A0D /* ReviewViewController.swift */; };
+		866174C41FACDAF800318A0D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866174C31FACDAF800318A0D /* Place.swift */; };
+		8668E7EE1FAD263600C868EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8668E7ED1FAD263600C868EB /* MapKit.framework */; };
+		8668E7F01FAD274100C868EB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668E7EF1FAD274100C868EB /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86517FE51FB0D8DC00C1D36F /* AddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		866174A41FACD5C800318A0D /* Lugares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lugares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866174A71FACD5C800318A0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		866174A91FACD5C800318A0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,13 @@
 		866174AE1FACD5C800318A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		866174B11FACD5C800318A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		866174B31FACD5C800318A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		866174BB1FACD98A00318A0D /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		866174BD1FACDA6500318A0D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		866174BE1FACDA6500318A0D /* PlaceDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewCell.swift; sourceTree = "<group>"; };
+		866174BF1FACDA6500318A0D /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		866174C31FACDAF800318A0D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		8668E7ED1FAD263600C868EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8668E7EF1FAD274100C868EB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8668E7EE1FAD263600C868EB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +57,7 @@
 			children = (
 				866174A61FACD5C800318A0D /* Lugares */,
 				866174A51FACD5C800318A0D /* Products */,
+				8668E7EC1FAD263600C868EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +74,27 @@
 			children = (
 				866174A71FACD5C800318A0D /* AppDelegate.swift */,
 				866174A91FACD5C800318A0D /* ViewController.swift */,
+				866174BD1FACDA6500318A0D /* DetailViewController.swift */,
+				866174BE1FACDA6500318A0D /* PlaceDetailViewCell.swift */,
+				866174BF1FACDA6500318A0D /* ReviewViewController.swift */,
 				866174AB1FACD5C800318A0D /* Main.storyboard */,
 				866174AE1FACD5C800318A0D /* Assets.xcassets */,
 				866174B01FACD5C800318A0D /* LaunchScreen.storyboard */,
 				866174B31FACD5C800318A0D /* Info.plist */,
+				866174BB1FACD98A00318A0D /* PlaceCell.swift */,
+				866174C31FACDAF800318A0D /* Place.swift */,
+				8668E7EF1FAD274100C868EB /* MapViewController.swift */,
+				86517FE51FB0D8DC00C1D36F /* AddPlaceViewController.swift */,
 			);
 			path = Lugares;
+			sourceTree = "<group>";
+		};
+		8668E7EC1FAD263600C868EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8668E7ED1FAD263600C868EB /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +129,13 @@
 				TargetAttributes = {
 					866174A31FACD5C800318A0D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 27VKJHB439;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,7 +176,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				866174AA1FACD5C800318A0D /* ViewController.swift in Sources */,
+				866174BC1FACD98A00318A0D /* PlaceCell.swift in Sources */,
+				866174C21FACDA6500318A0D /* ReviewViewController.swift in Sources */,
+				86517FE61FB0D8DC00C1D36F /* AddPlaceViewController.swift in Sources */,
+				866174C11FACDA6500318A0D /* PlaceDetailViewCell.swift in Sources */,
 				866174A81FACD5C800318A0D /* AppDelegate.swift in Sources */,
+				866174C41FACDAF800318A0D /* Place.swift in Sources */,
+				866174C01FACDA6500318A0D /* DetailViewController.swift in Sources */,
+				8668E7F01FAD274100C868EB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +306,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27VKJHB439;
 				INFOPLIST_FILE = Lugares/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salced.Lugares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +320,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27VKJHB439;
 				INFOPLIST_FILE = Lugares/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salced.Lugares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +349,7 @@
 				866174B81FACD5C800318A0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
